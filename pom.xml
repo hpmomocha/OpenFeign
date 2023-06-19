@@ -11,6 +11,8 @@
         <module>cloud-feign-server</module>
         <module>cloud-feign-api</module>
         <module>cloud-feign-client</module>
+        <module>resttemplate</module>
+        <module>resttemplate-api</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -21,6 +23,7 @@
         <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
         <spring.cloud.version>Hoxton.SR12</spring.cloud.version>
         <spring.cloud.alibaba.version>2.2.9.RELEASE</spring.cloud.alibaba.version>
+        <lombok.version>1.18.20</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -48,6 +51,15 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring.cloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

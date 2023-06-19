@@ -1,0 +1,18 @@
+常见的客户端请求工具:
+1. JDK HttpURLConnection 无连接池
+2. Apache HttpClient
+3. OkHttp
+
+Rest Template 是一个同步的Web Http客户端请求模板工具。
+    是Spring框架做的抽象, 底层需要另外的执行引擎支持。
+    常见的执行引擎包括HttpClient, Netty, OkHttp
+Rest Template 默认使用 JDK HttpURLConnection
+===code===
+// 这种使用方式底层使用执行引擎 HttpURLConnection
+RestTemplate template = new RestTempalte();
+===code===
+
+WebClient 可以视作是 Rest Template 的一个升级版本, 支持同步和异步, 以及响应式。
+Rest Template 将会逐步被废弃, 以后会推荐使用 WebClient
+
+Rest Template 重要的方法：
