@@ -36,6 +36,9 @@ feign:
         # 通过配置文件的方式单独配置服务的日志输出
         # 请求日志级别
         loggerLevel: HEADERS
+      feign-old-annotation-service:
+        # Feign 契约的配置文件配置方式(和配置类配置方式选一)
+        contract: feign.Contract.Default
 
 # feign调试日志是debug级别输出,
 # springboot默认的日志级别是info，所以feign的debug日志级别就不会输出
