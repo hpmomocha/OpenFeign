@@ -30,5 +30,5 @@ feign:
       # 注意: 这里的服务名称要和 service 类中的 @FeignClient注解的 contextId 属性设定值一致
       # 单个服务配置的超时时间会覆盖全局配置
       timeout:
-        connectTimeout: 2000
-        readTimeout: 2000
+        connectTimeout: 5000
+        readTimeout: 5000
