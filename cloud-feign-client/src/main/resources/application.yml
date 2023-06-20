@@ -8,3 +8,27 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848 #配置Nacos地址
+
+## 如果 OpenFeign 没有设置对应的超时时间, 将会采用Ribbon的默认超时时间
+## Ribbon 默认的 ReadTimeout 和 ConnectTimeout 都是1秒
+## 一般不推荐去修改 Ribbon 的 超时时间配置(ReadTimeout/ConnectTimeout)
+#ribbon:
+#  # 建立链接所用的时间 单位: ms
+#  ReadTimeout: 5000
+#  # 建立链接后从服务器读取可用资源所用的时间 单位: ms
+#  ConnectTimeout: 5000
+
+# 推荐设置 OpenFeign 的超时时间
+feign:
+  client:
+    config:
+      # default 设置的全局超时时间, 对所有的 openFeign 接口服务都生效
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+      # 指定服务名称可以设置单个服务的超时时间
+      # 注意: 这里的服务名称要和 service 类中的 @FeignClient注解的 contextId 属性设定值一致
+      # 单个服务配置的超时时间会覆盖全局配置
+      timeout:
+        connectTimeout: 2000
+        readTimeout: 2000
