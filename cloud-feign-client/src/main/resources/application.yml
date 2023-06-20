@@ -39,6 +39,9 @@ feign:
       feign-old-annotation-service:
         # Feign 契约的配置文件配置方式(和配置类配置方式选一)
         contract: feign.Contract.Default
+        # 拦截器定义(也可以在配置类中定义)
+        requestInterceptors:
+          - com.hpe.kevin.feign.interceptor.CustomFeignInterceptor
 
 # feign调试日志是debug级别输出,
 # springboot默认的日志级别是info，所以feign的debug日志级别就不会输出
